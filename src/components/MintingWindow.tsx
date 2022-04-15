@@ -82,16 +82,6 @@ const MintingWindow = () => {
   return (
     <>
       <CenteredColumn>
-        <Heading
-          sx={{
-            color: 'black',
-            mt: index > 2 ? 4 : 1,
-            textAlign: 'center',
-            fontSize,
-          }}
-        >
-          General Sale
-        </Heading>
         {isActive ? (
           <>
             <Box sx={{ my: index > 2 ? 4 : 0 }}>

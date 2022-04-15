@@ -1,7 +1,8 @@
 /** @jsxImportSource theme-ui */
+import { Box } from 'theme-ui'
+
 import Header from '../components/Header'
 import MintingWindow from '../components/MintingWindow'
-import { Box } from 'theme-ui'
 
 const App = () => {
   return (

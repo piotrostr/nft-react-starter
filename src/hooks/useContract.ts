@@ -1,6 +1,6 @@
 import { Contract } from '@ethersproject/contracts'
 import { useProvider } from 'connectors/metamask'
-import { SMPLVerse } from './abi'
+import { SMPLverseArtifact, SMPLverse } from '../contract'
 
 import { CONTRACT_ADDRESS_RINKEBY } from '../constants'
 
@@ -10,9 +10,9 @@ export const useContract = () => {
   if (provider) {
     return new Contract(
       CONTRACT_ADDRESS_RINKEBY,
-      SMPLVerse.abi,
+      SMPLverseArtifact.abi,
       provider?.getSigner() || provider || undefined
-    )
+    ) as SMPLverse
   }
   return undefined
 }

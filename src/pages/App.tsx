@@ -1,3 +1,32 @@
-export default function App() {
-  return <div>hello</div>
+/** @jsxImportSource theme-ui */
+import Header from '../components/Header'
+import MintingWindow from '../components/MintingWindow'
+import { Box } from 'theme-ui'
+
+const App = () => {
+  return (
+    <div
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        backgroundColor: 'background',
+      }}
+    >
+      <Header />
+      <Box
+        sx={{
+          display: 'flex',
+          flex: '1 1 auto',
+          p: 3,
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}
+      >
+        <MintingWindow />
+      </Box>
+    </div>
+  )
 }
+
+export default App

@@ -33,7 +33,7 @@ const Wallet = () => {
           <Spinner
             color="white"
             size="22"
-            strokeWidth="3"
+            strokeWidth={3}
             sx={{ margin: 'none' }}
           />
         </Flex>

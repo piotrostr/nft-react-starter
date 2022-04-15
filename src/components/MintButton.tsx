@@ -2,8 +2,9 @@
 import styled from '@emotion/styled'
 import { Centered } from 'components/Flex'
 import { MouseEventHandler } from 'react'
-import { colors } from 'theme'
 import { Spinner, Text } from 'theme-ui'
+
+import { colors } from '../theme'
 
 interface Props {
   ethRequired: string | undefined

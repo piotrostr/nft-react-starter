@@ -11,13 +11,13 @@ import { useEffect, useState } from 'react'
 import { Box, Heading, Input } from 'theme-ui'
 
 import { CHAIN_ID } from '../constants'
+import { type SMPLverse } from '../contract'
 import { useContract } from '../hooks/useContract'
 import { CenteredColumn } from './Flex'
 import MintButton from './MintButton'
 
 const MintingWindow = () => {
-  // use a typechain artifact to get typings
-  const contract = useContract()
+  const contract = useContract() as SMPLverse
   const provider = useProvider()
   const isActive = useIsActive()
 
@@ -55,13 +55,12 @@ const MintingWindow = () => {
       return
     }
     if (contract.signer && weiRequired && balance) {
-      const signerAddress = await contract.signer.getAddress()
       try {
         if (weiRequired.gt(balance)) {
           throw Error('Insufficient balance!')
         }
         setIsLoading(true)
-        const tx = await contract.mint(signerAddress, quantity, {
+        const tx = await contract.mint(quantity, {
           value: weiRequired,
         })
         await tx.wait()

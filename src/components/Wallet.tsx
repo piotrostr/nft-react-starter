@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
-import ConnectButton from './ConnectButton'
+import { Flex, Spinner } from 'theme-ui'
+
 import {
   metaMask,
   useAccounts,
@@ -7,7 +8,7 @@ import {
   useIsActivating,
   useIsActive,
 } from '../connectors/metamask'
-import { Flex, Spinner } from 'theme-ui'
+import ConnectButton from './ConnectButton'
 
 const Wallet = () => {
   const error = useError()

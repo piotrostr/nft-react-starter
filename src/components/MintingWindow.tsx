@@ -7,11 +7,11 @@ import Toast, {
   displaySuccessToast,
 } from 'components/Toast'
 import { useChainId, useIsActive, useProvider } from 'connectors/metamask'
-import { useContract } from '../hooks/useContract'
 import { useEffect, useState } from 'react'
 import { Box, Heading } from 'theme-ui'
 
 import { CHAIN_ID } from '../constants'
+import { useContract } from '../hooks/useContract'
 import { CenteredColumn } from './Flex'
 import MintButton from './MintButton'
 

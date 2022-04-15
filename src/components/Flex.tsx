@@ -24,7 +24,13 @@ interface CenteredRowProps {
   position?: any
 }
 
-export const Centered = ({ children, pb, pl, ml, fontSize }: CenteredProps) => (
+export const Centered = ({
+  children,
+  pb,
+  pl,
+  ml,
+  fontSize,
+}: CenteredProps) => (
   <FlexBase
     sx={{
       justifyContent: 'center',
@@ -55,7 +61,12 @@ export const CenteredColumn = ({ children }: { children: ReactNode }) => (
   </FlexBase>
 )
 
-export const CenteredRow = ({ width, children, justifyContent, position }: CenteredRowProps) => (
+export const CenteredRow = ({
+  width,
+  children,
+  justifyContent,
+  position,
+}: CenteredRowProps) => (
   <FlexBase
     sx={{
       flexDirection: 'row',
@@ -69,6 +80,13 @@ export const CenteredRow = ({ width, children, justifyContent, position }: Cente
   </FlexBase>
 )
 
-export const Flex = ({ flexDirection, justifyContent, alignItems, children }: FlexProps) => (
-  <FlexBase sx={{ flexDirection, justifyContent, alignItems }}>{children}</FlexBase>
+export const Flex = ({
+  flexDirection,
+  justifyContent,
+  alignItems,
+  children,
+}: FlexProps) => (
+  <FlexBase sx={{ flexDirection, justifyContent, alignItems }}>
+    {children}
+  </FlexBase>
 )

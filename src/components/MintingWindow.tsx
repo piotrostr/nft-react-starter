@@ -8,7 +8,7 @@ import Toast, {
 } from 'components/Toast'
 import { useChainId, useIsActive, useProvider } from 'connectors/metamask'
 import { useEffect, useState } from 'react'
-import { Box, Heading } from 'theme-ui'
+import { Box, Heading, Input } from 'theme-ui'
 
 import { CHAIN_ID } from '../constants'
 import { useContract } from '../hooks/useContract'
@@ -16,7 +16,7 @@ import { CenteredColumn } from './Flex'
 import MintButton from './MintButton'
 
 const MintingWindow = () => {
-  // TODO use a typechain artifact to get typings
+  // use a typechain artifact to get typings
   const contract = useContract()
   const provider = useProvider()
   const isActive = useIsActive()
@@ -83,11 +83,6 @@ const MintingWindow = () => {
   return (
     <>
       <CenteredColumn>
-        {index > 2 && (
-          <div sx={{ mt: 4, mb: 2 }}>
-            <MainLogo />
-          </div>
-        )}
         <Heading
           sx={{
             color: 'black',
@@ -101,10 +96,9 @@ const MintingWindow = () => {
         {isActive ? (
           <>
             <Box sx={{ my: index > 2 ? 4 : 0 }}>
-              <Slider
-                quantity={quantity}
-                setQuantity={setQuantity}
-                isLoading={isLoading}
+              <Input
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.valueAsNumber)}
               />
             </Box>
             {index > 2 && (
